@@ -32,11 +32,11 @@ export const Footer = () => {
                 <span className="text-[#E8B84B]">SL</span>
               </div>
               <div>
-                <h3 className="text-lg font-extrabold tracking-tight text-[#1F2937]">
-                  SHREE LATA GIFTS & COMMUNICATION
+                <h3 className="text-xl font-extrabold tracking-tight text-[#1F2937]">
+                  SHREE LATA
                 </h3>
-                <p className="text-[10px] font-extrabold tracking-widest text-[#2F5D8C] uppercase">
-                  PRODUCT CATALOGUE
+                <p className="text-[10px] font-extrabold tracking-wider text-[#2F5D8C] uppercase">
+                  GIFTS & COMMUNICATION
                 </p>
               </div>
             </div>

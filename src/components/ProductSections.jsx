@@ -97,6 +97,10 @@ export const ProductSections = () => {
 
   const isMobileCat = selectedCategory === 'ALL' || (selectedCategory && selectedCategory.toLowerCase().includes('mobile'));
 
+  const displayProducts = activeTab === 'home' 
+    ? filteredProducts.slice(0, 12) 
+    : filteredProducts;
+
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10" id="catalogue-section">
       
@@ -119,7 +123,7 @@ export const ProductSections = () => {
             }}
             className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2F5D8C] hover:underline group"
           >
-            <span>View All Featured</span>
+            <span>View All ({products.length})</span>
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </button>
         )}
@@ -217,12 +221,29 @@ export const ProductSections = () => {
       )}
 
       {/* Product Grid */}
-      {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-5">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+      {displayProducts.length > 0 ? (
+        <>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-5">
+            {displayProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+
+          {activeTab === 'home' && products.length > 12 && (
+            <div className="mt-10 text-center">
+              <button
+                onClick={() => {
+                  setActiveTab('products');
+                  window.scrollTo({ top: 350, behavior: 'smooth' });
+                }}
+                className="inline-flex items-center justify-center gap-2 bg-[#2F5D8C] hover:bg-[#234970] text-white font-extrabold text-xs sm:text-sm px-8 py-3.5 rounded-full transition-all shadow-md hover:shadow-lg group"
+              >
+                <span>Explore All {products.length}+ Products</span>
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          )}
+        </>
       ) : (
         <div className="bg-white rounded-2xl p-12 text-center border border-[#E6EAF0] max-w-md mx-auto space-y-4 my-8 shadow-2xs">
           <div className="w-14 h-14 rounded-full bg-[#DCEAF7] text-[#2F5D8C] flex items-center justify-center mx-auto">

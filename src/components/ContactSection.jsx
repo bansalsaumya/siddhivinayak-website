@@ -53,7 +53,7 @@ export const ContactSection = () => {
                 <div>
                   <p className="font-bold text-[#1F2937]">Store Address</p>
                   <p className="text-xs text-[#667085] mt-0.5 leading-relaxed font-medium">
-                    Shree Lata Gift And Communication, Vinzol Rail Crossing Rd, Ahmedabad, Gujarat 382445
+                    15, Gayatri Shopping Centre, Dibiyapur, Vatva, Ahmedabad, Gujarat 382445
                   </p>
                   <a 
                     href="https://maps.app.goo.gl/h3PFovfsiCd4zuzf7" 

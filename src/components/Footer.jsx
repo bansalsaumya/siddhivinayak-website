@@ -115,7 +115,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="hover:text-[#2F5D8C] transition underline-offset-2 hover:underline"
                 >
-                  Shree Lata Gift And Communication, Vinzol Rail Crossing Rd, Ahmedabad, Gujarat 382445
+                  15, Gayatri Shopping Centre, Dibiyapur, Vatva, Ahmedabad, Gujarat 382445
                 </a>
               </div>
               <div className="flex items-center gap-2">

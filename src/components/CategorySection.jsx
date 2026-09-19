@@ -35,15 +35,15 @@ export const CategorySection = () => {
       </div>
 
       {/* Category Cards Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 lg:grid-cols-9 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-9 gap-3 sm:gap-4">
         {categories.map((cat) => (
           <div
             key={cat.id}
             onClick={() => handleCategoryClick(cat.name)}
-            className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-[#E6EAF0] p-3 shadow-2xs hover:shadow-md transition-all duration-300 card-3d flex flex-col justify-between"
+            className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-[#E6EAF0] p-2.5 sm:p-3 shadow-2xs hover:shadow-md transition-all duration-300 card-3d flex flex-col justify-between"
           >
             {/* Category Image */}
-            <div className="relative h-28 sm:h-32 rounded-lg overflow-hidden bg-[#F3F6FA] mb-3">
+            <div className="relative h-24 sm:h-32 rounded-lg overflow-hidden bg-[#F3F6FA] mb-2 sm:mb-3">
               <img 
                 src={cat.image || cat.image_url || 'https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=800&q=80'} 
                 alt={cat.name} 

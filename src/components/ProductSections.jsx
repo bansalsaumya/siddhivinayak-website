@@ -87,13 +87,13 @@ export const ProductSections = () => {
           <div className="flex flex-wrap items-center justify-between gap-3">
             
             {/* Category Filter */}
-            <div className="flex items-center gap-2 overflow-x-auto py-1">
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none max-w-full">
               <span className="text-xs font-bold text-[#2F5D8C] flex items-center gap-1 flex-shrink-0">
                 <Filter size={12} /> Category:
               </span>
               <button
                 onClick={() => setSelectedCategory('ALL')}
-                className={`px-3 py-1 rounded-full text-xs font-bold transition ${
+                className={`px-3 py-1 rounded-full text-xs font-bold transition flex-shrink-0 ${
                   selectedCategory === 'ALL'
                     ? 'bg-[#2F5D8C] text-white shadow-2xs'
                     : 'bg-[#F3F6FA] text-gray-600 hover:bg-[#DCEAF7]'
@@ -105,7 +105,7 @@ export const ProductSections = () => {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.name)}
-                  className={`px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition ${
+                  className={`px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition flex-shrink-0 ${
                     selectedCategory === cat.name
                       ? 'bg-[#2F5D8C] text-white shadow-2xs'
                       : 'bg-[#F3F6FA] text-gray-600 hover:bg-[#DCEAF7]'
@@ -117,7 +117,7 @@ export const ProductSections = () => {
             </div>
 
             {/* Tag Filter Buttons */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-shrink-0">
               <button
                 onClick={() => setSelectedSectionFilter(selectedSectionFilter === 'FEATURED' ? 'ALL' : 'FEATURED')}
                 className={`px-3 py-1 rounded-full text-xs font-bold transition ${
@@ -145,7 +145,7 @@ export const ProductSections = () => {
 
       {/* Product Grid */}
       {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-5">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

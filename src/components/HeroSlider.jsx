@@ -113,6 +113,8 @@ export const HeroSlider = () => {
                 src={currentSlide.image_url || "/uploads/hero_collage.jpg"} 
                 alt={currentSlide.title}
                 className="w-full h-full object-cover rounded-2xl transition-all duration-700 transform hover:scale-105"
+                fetchPriority="high"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
             </div>

@@ -31,6 +31,7 @@ export const ProductCard = ({ product }) => {
           }}
           className="w-full h-full object-contain img-zoom"
           loading="lazy"
+          decoding="async"
         />
 
         {/* Wishlist Heart Icon */}

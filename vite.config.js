@@ -7,7 +7,10 @@ export default defineConfig({
   build: {
     target: 'esnext',
     cssCodeSplit: true,
+    cssMinify: true,
     minify: 'esbuild',
+    assetsInlineLimit: 4096,
+    reportCompressedSize: false,
     rollupOptions: {
       output: {
         manualChunks: {

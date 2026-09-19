@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shree-lata-gifts.vercel.app/sitemap.xml
+Sitemap: https://shree-lata-gifts-and-communication.vercel.app/sitemap.xml

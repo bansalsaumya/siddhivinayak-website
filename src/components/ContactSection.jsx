@@ -46,28 +46,33 @@ export const ContactSection = () => {
 
             <div className="space-y-4 text-xs sm:text-sm text-[#1F2937]">
               
-              <div className="flex items-start gap-3.5">
-                <div className="p-2 rounded-xl bg-[#DCEAF7] text-[#2F5D8C] mt-0.5 flex-shrink-0">
+              {/* Store Address - Clickable to Google Maps */}
+              <a 
+                href="https://maps.app.goo.gl/h3PFovfsiCd4zuzf7" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start gap-3.5 p-2.5 rounded-2xl hover:bg-[#F3F6FA] transition cursor-pointer group border border-transparent hover:border-[#E6EAF0]"
+              >
+                <div className="p-2 rounded-xl bg-[#DCEAF7] text-[#2F5D8C] mt-0.5 flex-shrink-0 group-hover:scale-105 transition-transform">
                   <MapPin size={17} />
                 </div>
                 <div>
-                  <p className="font-bold text-[#1F2937]">Store Address</p>
+                  <p className="font-bold text-[#1F2937] group-hover:text-[#2F5D8C] transition-colors flex items-center gap-1">
+                    <span>Store Address</span>
+                    <span className="text-[10px] text-[#2F5D8C] font-semibold opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+                  </p>
                   <p className="text-xs text-[#667085] mt-0.5 leading-relaxed font-medium">
                     15, Gayatri Shopping Centre, Dibiyapur, Vatva, Ahmedabad, Gujarat 382445
                   </p>
-                  <a 
-                    href="https://maps.app.goo.gl/h3PFovfsiCd4zuzf7" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[11px] font-bold text-[#2F5D8C] hover:underline mt-1"
-                  >
-                    <span>View on Google Maps</span>
+                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[#2F5D8C] underline decoration-[#2F5D8C]/40 mt-1">
+                    <span>Open in Google Maps</span>
                     <MapPin size={12} />
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-start gap-3.5">
+              {/* Business Hours */}
+              <div className="flex items-start gap-3.5 p-2.5 rounded-2xl">
                 <div className="p-2 rounded-xl bg-[#DCEAF7] text-[#2F5D8C] mt-0.5 flex-shrink-0">
                   <Clock size={17} />
                 </div>
@@ -78,25 +83,38 @@ export const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5">
-                <div className="p-2 rounded-xl bg-[#DCEAF7] text-[#2F5D8C] mt-0.5 flex-shrink-0">
+              {/* Direct Hotline - Clickable Call */}
+              <a 
+                href={`tel:+${phoneFormatted}`}
+                className="flex items-start gap-3.5 p-2.5 rounded-2xl hover:bg-[#F3F6FA] transition cursor-pointer group border border-transparent hover:border-[#E6EAF0]"
+              >
+                <div className="p-2 rounded-xl bg-[#DCEAF7] text-[#2F5D8C] mt-0.5 flex-shrink-0 group-hover:scale-105 transition-transform">
                   <Phone size={17} />
                 </div>
                 <div>
-                  <p className="font-bold text-[#1F2937]">Direct Hotline</p>
-                  <p className="text-sm font-extrabold text-[#2F5D8C] mt-0.5 font-mono">+91 97251 11128</p>
+                  <p className="font-bold text-[#1F2937] group-hover:text-[#2F5D8C] transition-colors">Direct Hotline</p>
+                  <p className="text-sm font-extrabold text-[#2F5D8C] mt-0.5 font-mono group-hover:underline flex items-center gap-1">
+                    <span>+{phoneFormatted.replace(/(\d{2})(\d{5})(\d{5})/, '$1 $2 $3')}</span>
+                    <span className="text-[10px] bg-[#DCEAF7] text-[#2F5D8C] px-1.5 py-0.5 rounded-full font-sans font-bold">Call Now</span>
+                  </p>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-start gap-3.5">
-                <div className="p-2 rounded-xl bg-emerald-50 text-emerald-600 mt-0.5 flex-shrink-0">
+              {/* WhatsApp Support - Clickable WhatsApp */}
+              <a 
+                href={`https://wa.me/${phoneFormatted}?text=${encodeURIComponent('Hello Shree Lata, I would like to enquire about your products.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3.5 p-2.5 rounded-2xl hover:bg-emerald-50/70 transition cursor-pointer group border border-transparent hover:border-emerald-200"
+              >
+                <div className="p-2 rounded-xl bg-emerald-50 text-emerald-600 mt-0.5 flex-shrink-0 group-hover:scale-105 transition-transform">
                   <MessageCircle size={17} />
                 </div>
                 <div>
-                  <p className="font-bold text-[#1F2937]">WhatsApp Support</p>
-                  <p className="text-xs text-[#667085] mt-0.5">Instant price quote & stock check</p>
+                  <p className="font-bold text-[#1F2937] group-hover:text-emerald-700 transition-colors">WhatsApp Support</p>
+                  <p className="text-xs text-[#667085] mt-0.5 group-hover:text-emerald-800">Instant price quote & stock check (Click to Chat)</p>
                 </div>
-              </div>
+              </a>
 
             </div>
           </div>

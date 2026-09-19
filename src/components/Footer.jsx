@@ -120,11 +120,23 @@ export const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={15} className="text-[#2F5D8C] flex-shrink-0" />
-                <span className="font-mono">+{whatsappConfig.phone || '919876543210'}</span>
+                <a 
+                  href={`tel:+${whatsappConfig.phone || '919725111128'}`} 
+                  className="font-mono hover:text-[#2F5D8C] transition hover:underline font-bold"
+                >
+                  +{whatsappConfig.phone || '919725111128'}
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <MessageCircle size={15} className="text-emerald-600 flex-shrink-0" />
-                <span>WhatsApp Best Price Quotes Available</span>
+                <a 
+                  href={`https://wa.me/${whatsappConfig.phone || '919725111128'}?text=${encodeURIComponent('Hello Shree Lata, I would like to enquire about your products.')}`}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-600 transition hover:underline font-semibold"
+                >
+                  WhatsApp Best Price Quotes Available
+                </a>
               </div>
             </div>
           </div>

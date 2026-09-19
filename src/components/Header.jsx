@@ -48,39 +48,43 @@ export const Header = () => {
     <header className="sticky top-0 z-40 glass-nav transition-all duration-300">
       
       {/* Top Announcement Bar */}
-      <div className="bg-[#2F5D8C] text-white py-1.5 px-4 text-xs font-semibold text-center flex items-center justify-center gap-2">
-        <span className="bg-[#E8B84B] text-[#1F2937] text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">
-          CATALOGUE
-        </span>
-        <span className="hidden sm:inline">ONE STORE, MANY CATEGORIES • Contact us directly for bulk & best price enquiries</span>
-        <span className="sm:hidden">ONE STORE, MANY CATEGORIES</span>
-        
-        <button 
-          onClick={() => setIsAdminOpen(true)}
-          className="ml-auto flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white text-[11px] font-bold px-3 py-0.5 rounded-full transition"
-          title="Open Admin Dashboard"
-        >
-          <Settings size={12} />
-          <span>Admin</span>
-        </button>
+      <div className="bg-[#2F5D8C] text-white py-1.5 px-3 text-[11px] font-semibold">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 overflow-hidden">
+          <div className="flex items-center gap-1.5 min-w-0 truncate">
+            <span className="bg-[#E8B84B] text-[#1F2937] text-[9px] sm:text-[10px] font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider flex-shrink-0">
+              CATALOGUE
+            </span>
+            <span className="hidden sm:inline text-xs font-medium truncate">ONE STORE, MANY CATEGORIES • Contact us directly for bulk & best price enquiries</span>
+            <span className="sm:hidden text-[10px] font-medium truncate">ONE STORE, MANY CATEGORIES</span>
+          </div>
+          
+          <button 
+            onClick={() => setIsAdminOpen(true)}
+            className="flex-shrink-0 flex items-center gap-1 bg-white/10 hover:bg-white/20 text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full transition"
+            title="Open Admin Dashboard"
+          >
+            <Settings size={11} />
+            <span>Admin</span>
+          </button>
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-20">
           
           {/* Logo */}
           <div 
             onClick={() => handleNavClick('home')} 
-            className="flex items-center gap-3 cursor-pointer group select-none"
+            className="flex items-center gap-2 sm:gap-3 cursor-pointer group select-none flex-shrink-0"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#2F5D8C] text-white flex items-center justify-center font-black text-lg tracking-tighter shadow-md">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#2F5D8C] text-white flex items-center justify-center font-black text-sm sm:text-lg tracking-tighter shadow-md">
               <span className="text-[#E8B84B]">SL</span>
             </div>
             <div>
-              <h1 className="text-xl font-extrabold tracking-tight text-[#1F2937] flex items-center gap-1.5">
+              <h1 className="text-sm sm:text-xl font-extrabold tracking-tight text-[#1F2937] leading-tight">
                 SHREE LATA
               </h1>
-              <p className="text-[10px] font-extrabold tracking-widest text-[#2F5D8C] uppercase">
+              <p className="text-[8px] sm:text-[10px] font-extrabold tracking-widest text-[#2F5D8C] uppercase leading-none mt-0.5">
                 PRODUCT CATALOGUE
               </p>
             </div>

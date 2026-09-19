@@ -13,6 +13,7 @@ export const CatalogProvider = ({ children }) => {
   // UI States
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('ALL');
+  const [selectedBrand, setSelectedBrand] = useState('ALL');
   const [selectedSectionFilter, setSelectedSectionFilter] = useState('ALL');
   const [selectedProductForModal, setSelectedProductForModal] = useState(null);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
@@ -180,6 +181,8 @@ export const CatalogProvider = ({ children }) => {
       setSearchQuery,
       selectedCategory,
       setSelectedCategory,
+      selectedBrand,
+      setSelectedBrand,
       selectedSectionFilter,
       setSelectedSectionFilter,
       selectedProductForModal,

@@ -11,11 +11,26 @@ export const ProductSections = () => {
     setSearchQuery,
     selectedCategory, 
     setSelectedCategory,
+    selectedBrand,
+    setSelectedBrand,
     selectedSectionFilter,
     setSelectedSectionFilter,
     activeTab,
     setActiveTab
   } = useCatalog();
+
+  const MOBILE_BRANDS = [
+    { id: 'ALL', name: 'All Brands' },
+    { id: 'iPhone', name: 'Apple iPhone', icon: '🍎' },
+    { id: 'Samsung', name: 'Samsung', icon: '📱' },
+    { id: 'Vivo', name: 'Vivo', icon: '📸' },
+    { id: 'Oppo', name: 'Oppo', icon: '✨' },
+    { id: 'OnePlus', name: 'OnePlus', icon: '⚡' },
+    { id: 'Realme', name: 'Realme', icon: '🚀' },
+    { id: 'Xiaomi', name: 'Xiaomi / Redmi', icon: '🔴' },
+    { id: 'Nothing', name: 'Nothing', icon: '⚪' },
+    { id: 'Tecno', name: 'Tecno', icon: '🔷' },
+  ];
 
   const filteredProducts = products.filter((product) => {
     if (searchQuery.trim() !== '') {
@@ -40,6 +55,23 @@ export const ProductSections = () => {
       }
     }
 
+    if (selectedBrand && selectedBrand !== 'ALL') {
+      const bQuery = selectedBrand.toLowerCase();
+      const pName = (product.name || '').toLowerCase();
+      const pSub = (product.subcategory || '').toLowerCase();
+      const pDesc = (product.description || '').toLowerCase();
+      const pBrand = (product.brand || '').toLowerCase();
+
+      const match = pName.includes(bQuery) || 
+                    pSub.includes(bQuery) || 
+                    pDesc.includes(bQuery) || 
+                    pBrand.includes(bQuery) ||
+                    (bQuery === 'iphone' && pName.includes('iphone')) ||
+                    (bQuery === 'xiaomi' && (pName.includes('redmi') || pName.includes('xiaomi')));
+
+      if (!match) return false;
+    }
+
     if (selectedSectionFilter === 'FEATURED' && !product.featured) return false;
     if (selectedSectionFilter === 'NEW' && !product.new_arrival) return false;
     if (selectedSectionFilter === 'BESTSELLER' && !product.best_seller) return false;
@@ -50,8 +82,11 @@ export const ProductSections = () => {
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedCategory('ALL');
+    setSelectedBrand('ALL');
     setSelectedSectionFilter('ALL');
   };
+
+  const isMobileCat = selectedCategory === 'ALL' || (selectedCategory && selectedCategory.toLowerCase().includes('mobile'));
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10" id="catalogue-section">
@@ -92,7 +127,10 @@ export const ProductSections = () => {
                 <Filter size={12} /> Category:
               </span>
               <button
-                onClick={() => setSelectedCategory('ALL')}
+                onClick={() => {
+                  setSelectedCategory('ALL');
+                  setSelectedBrand('ALL');
+                }}
                 className={`px-3 py-1 rounded-full text-xs font-bold transition flex-shrink-0 ${
                   selectedCategory === 'ALL'
                     ? 'bg-[#2F5D8C] text-white shadow-2xs'
@@ -104,7 +142,10 @@ export const ProductSections = () => {
               {categories.map((cat) => (
                 <button
                   key={cat.id}
-                  onClick={() => setSelectedCategory(cat.name)}
+                  onClick={() => {
+                    setSelectedCategory(cat.name);
+                    setSelectedBrand('ALL');
+                  }}
                   className={`px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition flex-shrink-0 ${
                     selectedCategory === cat.name
                       ? 'bg-[#2F5D8C] text-white shadow-2xs'
@@ -140,6 +181,29 @@ export const ProductSections = () => {
               </button>
             </div>
           </div>
+
+          {/* Dedicated Mobile Brand Filter Pills */}
+          {isMobileCat && (
+            <div className="pt-2 border-t border-gray-100 flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none max-w-full">
+              <span className="text-xs font-bold text-[#2F5D8C] flex-shrink-0">
+                Brands:
+              </span>
+              {MOBILE_BRANDS.map((b) => (
+                <button
+                  key={b.id}
+                  onClick={() => setSelectedBrand(b.id)}
+                  className={`px-3 py-1 rounded-full text-xs font-bold transition flex-shrink-0 flex items-center gap-1 ${
+                    selectedBrand === b.id
+                      ? 'bg-[#2F5D8C] text-white shadow-2xs ring-2 ring-[#2F5D8C]/20'
+                      : 'bg-[#F3F6FA] text-gray-700 hover:bg-[#DCEAF7]'
+                  }`}
+                >
+                  {b.icon && <span>{b.icon}</span>}
+                  <span>{b.name}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       )}
 

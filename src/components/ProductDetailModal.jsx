@@ -60,7 +60,11 @@ export const ProductDetailModal = () => {
                 <img 
                   src={images[selectedImageIndex]} 
                   alt={product.name} 
-                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80';
+                  }}
+                  className="w-full h-full object-contain"
                 />
                 <span className="absolute top-3 left-3 bg-[#DCEAF7] text-[#2F5D8C] text-xs font-bold px-3 py-1 rounded-lg border border-[#B8D5E5]">
                   {product.category}

@@ -25,7 +25,12 @@ export const ProductCard = ({ product }) => {
         <img 
           src={primaryImage} 
           alt={product.name} 
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80';
+          }}
           className="w-full h-full object-contain img-zoom"
+          loading="lazy"
         />
 
         {/* Wishlist Heart Icon */}

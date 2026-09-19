@@ -47,6 +47,10 @@ export const CategorySection = () => {
               <img 
                 src={cat.image || cat.image_url || 'https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=800&q=80'} 
                 alt={cat.name} 
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=800&q=80';
+                }}
                 className="w-full h-full object-cover img-zoom"
               />
             </div>

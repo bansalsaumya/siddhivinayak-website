@@ -60,7 +60,7 @@ export const INITIAL_CATEGORIES = [
     slug: 'sports-fitness',
     description: 'Badminton racket sets, leather soccer balls, vacuum bottles & yoga mats.',
     icon: 'Trophy',
-    image: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80',
     order: 7
   },
   {
@@ -69,7 +69,7 @@ export const INITIAL_CATEGORIES = [
     slug: 'toys-games',
     description: 'Plush teddy bears, RC stunt cars, STEM building blocks & board games.',
     icon: 'Gamepad2',
-    image: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80',
     order: 8
   },
   {

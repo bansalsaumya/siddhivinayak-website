@@ -109,7 +109,14 @@ export const Footer = () => {
             <div className="space-y-2.5 text-xs text-[#667085]">
               <div className="flex items-start gap-2">
                 <MapPin size={15} className="text-[#2F5D8C] flex-shrink-0 mt-0.5" />
-                <span>Main Commercial Market Road, Retail Zone, City Central</span>
+                <a 
+                  href="https://maps.app.goo.gl/h3PFovfsiCd4zuzf7" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-[#2F5D8C] transition underline-offset-2 hover:underline"
+                >
+                  Shree Lata Gift And Communication, Vinzol Rail Crossing Rd, Ahmedabad, Gujarat 382445
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={15} className="text-[#2F5D8C] flex-shrink-0" />

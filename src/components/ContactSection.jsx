@@ -52,9 +52,18 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-bold text-[#1F2937]">Store Address</p>
-                  <p className="text-xs text-[#667085] mt-0.5 leading-relaxed">
-                    Main Commercial Market Road, Shree Lata Store (Gifts, Toys, Stationery, Sports, Mobiles & Accessories)
+                  <p className="text-xs text-[#667085] mt-0.5 leading-relaxed font-medium">
+                    Shree Lata Gift And Communication, Vinzol Rail Crossing Rd, Ahmedabad, Gujarat 382445
                   </p>
+                  <a 
+                    href="https://maps.app.goo.gl/h3PFovfsiCd4zuzf7" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[11px] font-bold text-[#2F5D8C] hover:underline mt-1"
+                  >
+                    <span>View on Google Maps</span>
+                    <MapPin size={12} />
+                  </a>
                 </div>
               </div>
 
@@ -105,16 +114,26 @@ export const ContactSection = () => {
         </div>
 
         {/* Interactive Google Map Display */}
-        <div className="lg:col-span-7 bg-white rounded-3xl border border-[#E6EAF0] shadow-sm overflow-hidden min-h-[380px] h-full flex flex-col justify-between p-2">
+        <div className="lg:col-span-7 bg-white rounded-3xl border border-[#E6EAF0] shadow-sm overflow-hidden min-h-[380px] h-full flex flex-col justify-between p-2 relative group">
           <div className="w-full h-full min-h-[360px] rounded-2xl overflow-hidden relative">
             <iframe 
-              title="Shree Lata Store Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.996941198592!2d77.2167213150824!3d28.63048598241777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b741d057%3A0xcdee88e47393c3f1!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1689000000000!5m2!1sen!2sin" 
+              title="Shree Lata Gift And Communication Google Maps Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.8974815557835!2d72.6275212!3d22.9540024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e88c9a77b7d15%3A0x35f870d984fd7e29!2sShree%20Lata%20Gift%20And%20Communication!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
               className="w-full h-full border-0 rounded-2xl min-h-[360px]"
               allowFullScreen="" 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
+            
+            <a
+              href="https://maps.app.goo.gl/h3PFovfsiCd4zuzf7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute top-3 right-3 bg-white/95 hover:bg-white text-[#1F2937] font-bold text-xs px-3.5 py-2 rounded-xl shadow-md border border-[#E6EAF0] transition flex items-center gap-1.5 backdrop-blur-xs"
+            >
+              <MapPin size={14} className="text-[#2F5D8C]" />
+              <span>Open in Google Maps ↗</span>
+            </a>
           </div>
         </div>
 

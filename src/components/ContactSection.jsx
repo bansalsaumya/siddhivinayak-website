@@ -39,7 +39,7 @@ export const ContactSection = () => {
                 <Store size={20} />
               </div>
               <div>
-                <h4 className="text-lg font-bold text-[#1F2937]">Shree Lata Mobile & Gift</h4>
+                <h4 className="text-lg font-bold text-[#1F2937]">Shree Lata Gifts & Communication</h4>
                 <p className="text-[10px] text-[#2F5D8C] font-extrabold uppercase tracking-wider">Multi-Category Retail Store</p>
               </div>
             </div>

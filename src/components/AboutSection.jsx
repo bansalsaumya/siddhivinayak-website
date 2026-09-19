@@ -24,7 +24,7 @@ export const AboutSection = () => {
             </h2>
 
             <p className="text-[#667085] text-sm sm:text-base leading-relaxed font-medium">
-              With over 21+ years of retail excellence, Shree Lata is a premier multi-category retail store and digital catalogue destination. We bring together a vast collection of smartphones, mobile accessories, artificial jewellery, cosmetics, stationery, sports goods, toys, and home decor items under one roof.
+              With over 21+ years of retail excellence, Shree Lata Gifts & Communication is a premier multi-category retail store and digital catalogue destination. We bring together a vast collection of smartphones, mobile accessories, artificial jewellery, cosmetics, stationery, sports goods, toys, and home decor items under one roof.
             </p>
 
             <p className="text-[#667085] text-xs sm:text-sm leading-relaxed">
@@ -53,7 +53,7 @@ export const AboutSection = () => {
               <div className="relative w-full rounded-xl overflow-hidden bg-[#FAFBFC] flex items-center justify-center">
                 <img 
                   src="/uploads/storefront_front.jpg" 
-                  alt="Shree Lata Mobile & Gift Storefront - 21+ Years Legacy" 
+                  alt="Shree Lata Gifts & Communication Storefront - 21+ Years Legacy" 
                   className="w-full max-h-[520px] object-contain rounded-xl transition-transform duration-300 hover:scale-[1.02]"
                 />
                 <span className="absolute top-3 right-3 text-xs font-black bg-[#2F5D8C] text-white px-3 py-1 rounded-full shadow-md border border-white flex items-center gap-1">
@@ -62,7 +62,7 @@ export const AboutSection = () => {
               </div>
               <div className="mt-2 text-center py-1">
                 <span className="text-xs font-bold text-[#2F5D8C] bg-[#DCEAF7] px-3 py-1 rounded-full border border-[#B8D5E5]">
-                  Shree Lata Mobile & Gift Store
+                  Shree Lata Gifts & Communication Store
                 </span>
               </div>
             </div>

@@ -5059,6 +5059,6 @@ export const INITIAL_HERO_SLIDES = [
 
 export const DEFAULT_WHATSAPP = {
   phone: "919725111128",
-  storeName: "Shree Lata Mobile & Gift",
+  storeName: "Shree Lata Gifts & Communication",
   template: "Hello Shree Lata, I am interested in this product.\n\nProduct: {product_name}\nCategory: {category}\nVariant: {variant}\nRef/SKU: {sku}\n\nPlease share the best price and availability."
 };

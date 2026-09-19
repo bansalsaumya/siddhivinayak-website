@@ -81,8 +81,8 @@ export const Header = () => {
               <span className="text-[#E8B84B]">SL</span>
             </div>
             <div>
-              <h1 className="text-sm sm:text-xl font-extrabold tracking-tight text-[#1F2937] leading-tight">
-                SHREE LATA
+              <h1 className="text-xs sm:text-base font-extrabold tracking-tight text-[#1F2937] leading-tight">
+                SHREE LATA GIFTS & COMMUNICATION
               </h1>
               <p className="text-[8px] sm:text-[10px] font-extrabold tracking-widest text-[#2F5D8C] uppercase leading-none mt-0.5">
                 PRODUCT CATALOGUE

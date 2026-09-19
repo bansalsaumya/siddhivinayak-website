@@ -56,18 +56,27 @@ export const ProductSections = () => {
     }
 
     if (selectedBrand && selectedBrand !== 'ALL') {
+      const normalizeStr = (str) => (str || '').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+      const prodCatClean = normalizeStr(product.category);
+      const mobileCatClean = normalizeStr('Mobiles & Smartphones');
+
+      // Strictly restrict Brand pills to Mobiles & Smartphones (exclusively actual mobile phones)
+      if (prodCatClean !== mobileCatClean) {
+        return false;
+      }
+
       const bQuery = selectedBrand.toLowerCase();
       const pName = (product.name || '').toLowerCase();
-      const pSub = (product.subcategory || '').toLowerCase();
-      const pDesc = (product.description || '').toLowerCase();
       const pBrand = (product.brand || '').toLowerCase();
 
-      const match = pName.includes(bQuery) || 
-                    pSub.includes(bQuery) || 
-                    pDesc.includes(bQuery) || 
-                    pBrand.includes(bQuery) ||
-                    (bQuery === 'iphone' && pName.includes('iphone')) ||
-                    (bQuery === 'xiaomi' && (pName.includes('redmi') || pName.includes('xiaomi')));
+      let match = false;
+      if (bQuery === 'iphone') {
+        match = pName.includes('iphone') || pName.includes('apple');
+      } else if (bQuery === 'xiaomi') {
+        match = pName.includes('xiaomi') || pName.includes('redmi');
+      } else {
+        match = pName.includes(bQuery) || pBrand.includes(bQuery);
+      }
 
       if (!match) return false;
     }

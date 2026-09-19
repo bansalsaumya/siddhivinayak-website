@@ -58,21 +58,23 @@ export const WhyChooseUs = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6">
           {features.map((item, index) => (
             <div 
               key={index} 
-              className="p-6 rounded-2xl bg-[#FAFBFC] border border-[#E6EAF0] shadow-2xs hover:shadow-md transition-all duration-300 card-3d"
+              className="p-3 sm:p-6 rounded-xl sm:rounded-2xl bg-[#FAFBFC] border border-[#E6EAF0] shadow-2xs hover:shadow-md transition-all duration-300 card-3d flex flex-col justify-between"
             >
-              <div className="w-11 h-11 rounded-xl bg-white border border-[#E6EAF0] shadow-2xs flex items-center justify-center mb-4">
-                {item.icon}
+              <div>
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-white border border-[#E6EAF0] shadow-2xs flex items-center justify-center mb-2 sm:mb-4">
+                  {React.cloneElement(item.icon, { size: 16, className: 'sm:w-[22px] sm:h-[22px] text-[#2F5D8C]' })}
+                </div>
+                <h4 className="text-xs sm:text-base font-extrabold text-[#1F2937] mb-1 sm:mb-1.5 leading-snug">
+                  {item.title}
+                </h4>
+                <p className="text-[10px] sm:text-xs text-[#667085] leading-tight sm:leading-relaxed font-normal">
+                  {item.description}
+                </p>
               </div>
-              <h4 className="text-base font-extrabold text-[#1F2937] mb-1.5">
-                {item.title}
-              </h4>
-              <p className="text-xs text-[#667085] leading-relaxed font-normal">
-                {item.description}
-              </p>
             </div>
           ))}
         </div>

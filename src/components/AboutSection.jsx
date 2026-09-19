@@ -52,7 +52,7 @@ export const AboutSection = () => {
             <div className="relative w-full rounded-2xl overflow-hidden shadow-md border border-[#E6EAF0] bg-white p-2 flex flex-col items-center">
               <div className="relative w-full rounded-xl overflow-hidden bg-[#FAFBFC] flex items-center justify-center">
                 <img 
-                  src="http://localhost:5000/uploads/storefront_front.jpg" 
+                  src="/uploads/storefront_front.jpg" 
                   alt="Shree Lata Mobile & Gift Storefront - 21+ Years Legacy" 
                   className="w-full max-h-[520px] object-contain rounded-xl transition-transform duration-300 hover:scale-[1.02]"
                 />

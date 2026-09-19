@@ -13,7 +13,7 @@ export const HeroSlider = () => {
       title: "Discover More.",
       blue_highlight: "Find What You Need.",
       description: "Explore mobiles, accessories, stationery, toys, sports products, gifts and more — all in one place.",
-      image_url: "http://localhost:5000/uploads/hero_collage.jpg",
+      image_url: "/uploads/hero_collage.jpg",
       cta_text: "Explore Products",
       category: "All"
     }
@@ -110,7 +110,7 @@ export const HeroSlider = () => {
           <div className="lg:col-span-6 flex justify-center items-center">
             <div className="relative w-full max-w-lg aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-white/60 bg-white/40">
               <img 
-                src={currentSlide.image_url || "http://localhost:5000/uploads/hero_collage.jpg"} 
+                src={currentSlide.image_url || "/uploads/hero_collage.jpg"} 
                 alt={currentSlide.title}
                 className="w-full h-full object-cover rounded-2xl transition-all duration-700 transform hover:scale-105"
               />

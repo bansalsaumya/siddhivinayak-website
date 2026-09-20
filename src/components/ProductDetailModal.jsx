@@ -194,16 +194,28 @@ export const ProductDetailModal = () => {
 
               </div>
 
-              {/* WhatsApp Enquiry Button */}
-              <div className="pt-4 border-t border-[#E6EAF0] space-y-2">
+              {/* WhatsApp Enquiry Buttons */}
+              <div className="pt-4 border-t border-[#E6EAF0] space-y-2.5">
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20BD5A] text-white font-extrabold text-sm py-3 px-6 rounded-2xl shadow-md transition-all transform hover:-translate-y-0.5"
+                  className="w-full inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20BD5A] text-white font-extrabold text-sm py-3.5 px-6 rounded-2xl shadow-md transition-all transform hover:-translate-y-0.5"
                 >
-                  <MessageCircle size={18} fill="currentColor" />
+                  <MessageCircle size={19} fill="currentColor" />
                   <span>Enquire Best Price on WhatsApp</span>
+                </a>
+
+                {/* Secondary CTA for unlisted variants or models */}
+                <a
+                  href={`https://wa.me/919725111128?text=${encodeURIComponent(
+                    `Hello Shree Lata, I am checking "${product.name}". Do you have other colors, GB variants, or related ${product.brand || product.category} models in stock?`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#F3F6FA] hover:bg-[#DCEAF7] text-[#2F5D8C] font-bold text-xs py-2.5 px-4 rounded-xl transition border border-[#E6EAF0]"
+                >
+                  <span>💬 Ask for Other Colors, Storage GB & Models</span>
                 </a>
               </div>
 

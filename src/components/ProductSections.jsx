@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCatalog } from '../context/CatalogContext';
 import { ProductCard } from './ProductCard';
-import { ArrowRight, Search, RotateCcw, Filter } from 'lucide-react';
+import { ArrowRight, Search, RotateCcw, Filter, MessageCircle } from 'lucide-react';
 
 export const ProductSections = () => {
   const { 
@@ -239,8 +239,44 @@ export const ProductSections = () => {
             ))}
           </div>
 
+          {/* End of Products Banner - Dynamic WhatsApp Inquiry */}
+          <div className="mt-12 bg-gradient-to-br from-[#1F2937] via-[#2F5D8C] to-[#1E3A8A] rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 border border-white/10">
+            <div className="space-y-2 max-w-xl z-10">
+              <span className="inline-block bg-[#25D366]/20 text-[#25D366] font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider border border-[#25D366]/30">
+                1000+ Items In Physical Store
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-white leading-tight">
+                {selectedBrand && selectedBrand !== 'ALL'
+                  ? `Looking for more ${selectedBrand} models?`
+                  : selectedCategory && selectedCategory !== 'ALL'
+                  ? `Need any other item in ${selectedCategory}?`
+                  : `Didn't find the exact product you're looking for?`}
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-200 font-medium">
+                {selectedBrand && selectedBrand !== 'ALL'
+                  ? `Website par sabhi ${selectedBrand} models list karna impossible hai! Humare physical store par latest & older ${selectedBrand} models stock me hain. Direct best rate poochein.`
+                  : `Humare offline store par 1000+ items available hain. Agar aapko koi specific product, model, ya variant chahiye toh turant WhatsApp par enquiry karein.`}
+              </p>
+            </div>
+            <a
+              href={`https://wa.me/919725111128?text=${encodeURIComponent(
+                selectedBrand && selectedBrand !== 'ALL'
+                  ? `Hello Shree Lata, I am looking for other ${selectedBrand} mobile models that are not listed on your website. Please share availability and prices!`
+                  : selectedCategory && selectedCategory !== 'ALL'
+                  ? `Hello Shree Lata, I am looking for items in ${selectedCategory} that are not listed on your website. Please assist!`
+                  : `Hello Shree Lata, I am looking for a specific product that I couldn't find on your website. Can you help me?`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20BD5A] text-white font-extrabold text-xs sm:text-sm px-7 py-3.5 rounded-2xl shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-[#25D366]/30 z-10"
+            >
+              <MessageCircle size={20} fill="currentColor" />
+              <span>Ask on WhatsApp Now</span>
+            </a>
+          </div>
+
           {activeTab === 'home' && products.length > 12 && (
-            <div className="mt-10 text-center">
+            <div className="mt-8 text-center">
               <button
                 onClick={() => {
                   setActiveTab('products');
@@ -255,20 +291,37 @@ export const ProductSections = () => {
           )}
         </>
       ) : (
-        <div className="bg-white rounded-2xl p-12 text-center border border-[#E6EAF0] max-w-md mx-auto space-y-4 my-8 shadow-2xs">
-          <div className="w-14 h-14 rounded-full bg-[#DCEAF7] text-[#2F5D8C] flex items-center justify-center mx-auto">
-            <Search size={24} />
+        <div className="bg-white rounded-3xl p-8 sm:p-12 text-center border border-[#E6EAF0] max-w-xl mx-auto space-y-5 my-8 shadow-sm">
+          <div className="w-16 h-16 rounded-full bg-[#DCEAF7] text-[#2F5D8C] flex items-center justify-center mx-auto">
+            <Search size={28} />
           </div>
-          <h4 className="text-base font-bold text-[#1F2937]">No Products Found</h4>
-          <p className="text-xs text-[#667085]">
-            We couldn't find any catalogue items matching your current filters.
-          </p>
-          <button
-            onClick={clearFilters}
-            className="px-4 py-2 bg-[#2F5D8C] text-white text-xs font-bold rounded-xl shadow-2xs"
-          >
-            Reset Filters
-          </button>
+          <div className="space-y-1">
+            <h4 className="text-lg font-extrabold text-[#1F2937]">Website Par Nahi Mila?</h4>
+            <p className="text-xs sm:text-sm text-[#667085]">
+              Humare physical store par 1000+ items stock me hain! Aap direct WhatsApp par model ya photo bhejkar instant stock & price jaan sakte hain.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <a
+              href={`https://wa.me/919725111128?text=${encodeURIComponent(
+                searchQuery
+                  ? `Hello Shree Lata, I searched for "${searchQuery}" on your website but didn't find it. Is it available in your shop?`
+                  : `Hello Shree Lata, I couldn't find the product I'm looking for on your website. Can you help me?`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs sm:text-sm font-extrabold px-6 py-3 rounded-2xl shadow-md transition-all"
+            >
+              <MessageCircle size={18} fill="currentColor" />
+              <span>Ask Stock on WhatsApp</span>
+            </a>
+            <button
+              onClick={clearFilters}
+              className="w-full sm:w-auto px-5 py-3 bg-[#F3F6FA] hover:bg-[#E6EAF0] text-[#2F5D8C] text-xs font-extrabold rounded-2xl transition"
+            >
+              Reset Filters
+            </button>
+          </div>
         </div>
       )}
 

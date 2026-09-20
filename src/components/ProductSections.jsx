@@ -32,6 +32,7 @@ export const ProductSections = () => {
     { id: 'Xiaomi', name: 'Xiaomi / Redmi', icon: '🔴' },
     { id: 'Nothing', name: 'Nothing', icon: '⚪' },
     { id: 'Tecno', name: 'Tecno', icon: '🔷' },
+    { id: 'iQOO', name: 'iQOO', icon: '⚡' },
   ];
 
   const filteredProducts = products.filter((product) => {

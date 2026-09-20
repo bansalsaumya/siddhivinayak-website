@@ -23,6 +23,7 @@ export const ProductSections = () => {
     { id: 'ALL', name: 'All Brands' },
     { id: 'iPhone', name: 'Apple iPhone', icon: '🍎' },
     { id: 'Samsung', name: 'Samsung', icon: '📱' },
+    { id: 'Google', name: 'Google Pixel', icon: '🔍' },
     { id: 'Vivo', name: 'Vivo', icon: '📸' },
     { id: 'Oppo', name: 'Oppo', icon: '✨' },
     { id: 'OnePlus', name: 'OnePlus', icon: '⚡' },
@@ -74,6 +75,8 @@ export const ProductSections = () => {
         match = pName.includes('iphone') || pName.includes('apple');
       } else if (bQuery === 'xiaomi') {
         match = pName.includes('xiaomi') || pName.includes('redmi');
+      } else if (bQuery === 'google') {
+        match = pName.includes('pixel') || pName.includes('google') || pBrand.includes('google');
       } else {
         match = pName.includes(bQuery) || pBrand.includes(bQuery);
       }

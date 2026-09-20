@@ -207,7 +207,10 @@ export const ProductSections = () => {
               {MOBILE_BRANDS.map((b) => (
                 <button
                   key={b.id}
-                  onClick={() => setSelectedBrand(b.id)}
+                  onClick={() => {
+                    setSelectedBrand(b.id);
+                    setSelectedSectionFilter('ALL');
+                  }}
                   className={`px-3 py-1 rounded-full text-xs font-bold transition flex-shrink-0 flex items-center gap-1 ${
                     selectedBrand === b.id
                       ? 'bg-[#2F5D8C] text-white shadow-2xs ring-2 ring-[#2F5D8C]/20'

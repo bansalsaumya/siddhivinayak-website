@@ -3322,6 +3322,38 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
+    id: 'prod-mob-630',
+    name: 'Nothing Phone (1)',
+    sku: 'SL-MOB-630',
+    category: 'Mobiles & Smartphones',
+    subcategory: 'Smartphones',
+    brand: 'Nothing',
+    description: 'Iconic original transparent Glyph interface, Snapdragon 778G+ 5G, dual 50MP Sony IMX766 OIS camera & 120Hz OLED display.',
+    images: ['/uploads/nothing_phone_1.png'],
+    variants: [{ size: '128GB', color: 'Black Transparent' }],
+    specifications: [{ label: 'Iconic Hardware', value: 'Original Glyph Interface + 50MP Sony IMX766 OIS' }],
+    availability: 'In Stock',
+    featured: true,
+    new_arrival: true,
+    best_seller: true
+  },
+  {
+    id: 'prod-mob-631',
+    name: 'CMF Phone 2 Pro',
+    sku: 'SL-MOB-631',
+    category: 'Mobiles & Smartphones',
+    subcategory: 'Smartphones',
+    brand: 'Nothing',
+    description: 'Mint Green modular back cover with custom accessory dial, 50MP Sony OIS main camera + portrait lens, Dimensity 7300 5G & 5000mAh battery.',
+    images: ['/uploads/cmf_phone_2_pro.png'],
+    variants: [{ size: '128GB', color: 'Mint Green' }],
+    specifications: [{ label: 'Modular Concept', value: 'CMF Modular Back Cover + Dial Access + 50MP Sony OIS' }],
+    availability: 'In Stock',
+    featured: true,
+    new_arrival: true,
+    best_seller: true
+  },
+  {
     id: 'prod-mob-22',
     name: 'Tecno Pova Curve 2 5G',
     sku: 'SL-MOB-122',

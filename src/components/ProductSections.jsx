@@ -77,6 +77,8 @@ export const ProductSections = () => {
         match = pName.includes('xiaomi') || pName.includes('redmi');
       } else if (bQuery === 'google') {
         match = pName.includes('pixel') || pName.includes('google') || pBrand.includes('google');
+      } else if (bQuery === 'nothing') {
+        match = pName.includes('nothing') || pName.includes('cmf') || pBrand.includes('nothing');
       } else {
         match = pName.includes(bQuery) || pBrand.includes(bQuery);
       }

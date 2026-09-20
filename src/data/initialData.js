@@ -3,7 +3,7 @@ export const INITIAL_CATEGORIES = [
     id: 'mobiles',
     name: 'Mobiles & Smartphones',
     slug: 'mobiles-smartphones',
-    description: 'Latest 5G smartphones from Apple, Samsung, Vivo, Oppo, OnePlus & Xiaomi.',
+    description: 'Latest 5G smartphones from Apple, Samsung, Motorola, Vivo, Oppo, OnePlus & Xiaomi.',
     icon: 'Smartphone',
     image: '/uploads/cat_mobiles.jpg',
     order: 1

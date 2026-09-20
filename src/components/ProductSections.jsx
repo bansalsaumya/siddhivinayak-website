@@ -24,6 +24,7 @@ export const ProductSections = () => {
     { id: 'iPhone', name: 'Apple iPhone', icon: '🍎' },
     { id: 'Samsung', name: 'Samsung', icon: '📱' },
     { id: 'Google', name: 'Google Pixel', icon: '🔍' },
+    { id: 'Motorola', name: 'Motorola', icon: 'Ⓜ️' },
     { id: 'Vivo', name: 'Vivo', icon: '📸' },
     { id: 'Oppo', name: 'Oppo', icon: '✨' },
     { id: 'OnePlus', name: 'OnePlus', icon: '⚡' },

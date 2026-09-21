@@ -150,6 +150,7 @@ export const ProductSections = () => {
                 onClick={() => {
                   setSelectedCategory('ALL');
                   setSelectedBrand('ALL');
+                  setSelectedSectionFilter('ALL');
                 }}
                 className={`px-3 py-1 rounded-full text-xs font-bold transition flex-shrink-0 ${
                   selectedCategory === 'ALL'
@@ -165,6 +166,7 @@ export const ProductSections = () => {
                   onClick={() => {
                     setSelectedCategory(cat.name);
                     setSelectedBrand('ALL');
+                    setSelectedSectionFilter('ALL');
                   }}
                   className={`px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition flex-shrink-0 ${
                     selectedCategory === cat.name

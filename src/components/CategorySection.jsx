@@ -3,10 +3,12 @@ import { useCatalog } from '../context/CatalogContext';
 import { ArrowRight } from 'lucide-react';
 
 export const CategorySection = () => {
-  const { categories, setSelectedCategory, setActiveTab } = useCatalog();
+  const { categories, setSelectedCategory, setSelectedBrand, setSelectedSectionFilter, setActiveTab } = useCatalog();
 
   const handleCategoryClick = (categoryName) => {
     setSelectedCategory(categoryName);
+    setSelectedBrand('ALL');
+    setSelectedSectionFilter('ALL');
     setActiveTab('products');
     window.scrollTo({ top: 500, behavior: 'smooth' });
   };

@@ -12,13 +12,20 @@ export const CatalogProvider = ({ children }) => {
 
   // UI States
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('ALL');
+  const [selectedCategory, setSelectedCategoryState] = useState('ALL');
   const [selectedBrand, setSelectedBrand] = useState('ALL');
   const [selectedSectionFilter, setSelectedSectionFilter] = useState('ALL');
   const [selectedProductForModal, setSelectedProductForModal] = useState(null);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('home');
   const [loading, setLoading] = useState(true);
+
+  // Master setter for category that ALWAYS auto-clears brand and section filters
+  const setSelectedCategory = (catName) => {
+    setSelectedCategoryState(catName);
+    setSelectedBrand('ALL');
+    setSelectedSectionFilter('ALL');
+  };
 
   // Fetch API data on load
   const loadCatalogData = async () => {

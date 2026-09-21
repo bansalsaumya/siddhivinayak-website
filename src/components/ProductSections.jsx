@@ -102,7 +102,7 @@ export const ProductSections = () => {
     setSelectedSectionFilter('ALL');
   };
 
-  const isMobileCat = selectedCategory === 'ALL' || (selectedCategory && selectedCategory.toLowerCase().includes('mobile'));
+  const isMobileCat = selectedCategory && selectedCategory.toLowerCase().replace(/[^a-z0-9]/g, '') === 'mobilessmartphones';
 
   const displayProducts = activeTab === 'home' 
     ? filteredProducts.slice(0, 12) 

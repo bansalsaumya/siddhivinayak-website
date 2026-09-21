@@ -58,34 +58,36 @@ export const ProductSections = () => {
       }
     }
 
+    // Brand filter only applies when viewing ALL categories or Mobiles & Smartphones
     if (selectedBrand && selectedBrand !== 'ALL') {
       const normalizeStr = (str) => (str || '').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-      const prodCatClean = normalizeStr(product.category);
+      const selCatClean = normalizeStr(selectedCategory);
       const mobileCatClean = normalizeStr('Mobiles & Smartphones');
 
-      // Strictly restrict Brand pills to Mobiles & Smartphones (exclusively actual mobile phones)
-      if (prodCatClean !== mobileCatClean) {
-        return false;
+      // If user selected a specific non-mobile category (like Mobile Accessories, Handbags, etc.), IGNORING selectedBrand completely!
+      if (selCatClean === 'all' || selCatClean === mobileCatClean) {
+        const prodCatClean = normalizeStr(product.category);
+        if (prodCatClean === mobileCatClean) {
+          const bQuery = selectedBrand.toLowerCase();
+          const pName = (product.name || '').toLowerCase();
+          const pBrand = (product.brand || '').toLowerCase();
+
+          let match = false;
+          if (bQuery === 'iphone') {
+            match = pName.includes('iphone') || pName.includes('apple');
+          } else if (bQuery === 'xiaomi') {
+            match = pName.includes('xiaomi') || pName.includes('redmi');
+          } else if (bQuery === 'google') {
+            match = pName.includes('pixel') || pName.includes('google') || pBrand.includes('google');
+          } else if (bQuery === 'nothing') {
+            match = pName.includes('nothing') || pName.includes('cmf') || pBrand.includes('nothing');
+          } else {
+            match = pName.includes(bQuery) || pBrand.includes(bQuery);
+          }
+
+          if (!match) return false;
+        }
       }
-
-      const bQuery = selectedBrand.toLowerCase();
-      const pName = (product.name || '').toLowerCase();
-      const pBrand = (product.brand || '').toLowerCase();
-
-      let match = false;
-      if (bQuery === 'iphone') {
-        match = pName.includes('iphone') || pName.includes('apple');
-      } else if (bQuery === 'xiaomi') {
-        match = pName.includes('xiaomi') || pName.includes('redmi');
-      } else if (bQuery === 'google') {
-        match = pName.includes('pixel') || pName.includes('google') || pBrand.includes('google');
-      } else if (bQuery === 'nothing') {
-        match = pName.includes('nothing') || pName.includes('cmf') || pBrand.includes('nothing');
-      } else {
-        match = pName.includes(bQuery) || pBrand.includes(bQuery);
-      }
-
-      if (!match) return false;
     }
 
     if (selectedSectionFilter === 'FEATURED' && !product.featured) return false;

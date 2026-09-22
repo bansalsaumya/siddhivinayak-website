@@ -31,18 +31,18 @@ export const AboutSection = () => {
               Our catalogue website serves as your direct window to explore current stock items, inspect specifications, and immediately query best price quotes through seamless WhatsApp interaction without retail friction.
             </p>
 
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-4 border-t border-[#E6EAF0]">
-              <div className="bg-white p-3.5 rounded-2xl border border-[#E6EAF0]">
-                <p className="text-2xl sm:text-3xl font-extrabold text-[#2F5D8C]">21+ Years</p>
-                <p className="text-[11px] text-[#667085] font-semibold mt-0.5">Trusted Experience</p>
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-[#E6EAF0]">
+              <div className="bg-white p-2.5 sm:p-3.5 rounded-2xl border border-[#E6EAF0] text-center sm:text-left">
+                <p className="text-lg sm:text-3xl font-extrabold text-[#2F5D8C] leading-tight">21+ Yrs</p>
+                <p className="text-[10px] sm:text-[11px] text-[#667085] font-semibold mt-0.5 leading-snug">Trusted Experience</p>
               </div>
-              <div className="bg-white p-3.5 rounded-2xl border border-[#E6EAF0]">
-                <p className="text-2xl sm:text-3xl font-extrabold text-[#2F5D8C]">9+</p>
-                <p className="text-[11px] text-[#667085] font-semibold mt-0.5">Store Departments</p>
+              <div className="bg-white p-2.5 sm:p-3.5 rounded-2xl border border-[#E6EAF0] text-center sm:text-left">
+                <p className="text-lg sm:text-3xl font-extrabold text-[#2F5D8C] leading-tight">9+</p>
+                <p className="text-[10px] sm:text-[11px] text-[#667085] font-semibold mt-0.5 leading-snug">Store Departments</p>
               </div>
-              <div className="bg-white p-3.5 rounded-2xl border border-[#E6EAF0]">
-                <p className="text-2xl sm:text-3xl font-extrabold text-[#1F2937]">100%</p>
-                <p className="text-[11px] text-[#667085] font-semibold mt-0.5">Verified Quality</p>
+              <div className="bg-white p-2.5 sm:p-3.5 rounded-2xl border border-[#E6EAF0] text-center sm:text-left">
+                <p className="text-lg sm:text-3xl font-extrabold text-[#1F2937] leading-tight">100%</p>
+                <p className="text-[10px] sm:text-[11px] text-[#667085] font-semibold mt-0.5 leading-snug">Verified Quality</p>
               </div>
             </div>
           </div>
@@ -56,12 +56,12 @@ export const AboutSection = () => {
                   alt="Shree Lata Gifts & Communication Storefront - 21+ Years Legacy" 
                   className="w-full max-h-[520px] object-contain rounded-xl transition-transform duration-300 hover:scale-[1.02]"
                 />
-                <span className="absolute top-3 right-3 text-xs font-black bg-[#2F5D8C] text-white px-3 py-1 rounded-full shadow-md border border-white flex items-center gap-1">
-                  <Award size={13} className="text-[#E8B84B]" /> 21+ Years Legacy
+                <span className="absolute top-2 right-2 text-[10px] sm:text-xs font-black bg-[#2F5D8C] text-white px-2.5 py-1 rounded-full shadow-md border border-white flex items-center gap-1">
+                  <Award size={12} className="text-[#E8B84B]" /> 21+ Yrs Legacy
                 </span>
               </div>
-              <div className="mt-2 text-center py-1">
-                <span className="text-xs font-bold text-[#2F5D8C] bg-[#DCEAF7] px-3 py-1 rounded-full border border-[#B8D5E5]">
+              <div className="mt-2.5 text-center py-1 w-full px-2">
+                <span className="inline-block text-[11px] sm:text-xs font-bold text-[#2F5D8C] bg-[#DCEAF7] px-3 py-1.5 rounded-full border border-[#B8D5E5] leading-normal text-center max-w-full">
                   Shree Lata Gifts & Communication Store
                 </span>
               </div>

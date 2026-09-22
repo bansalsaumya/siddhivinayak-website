@@ -126,7 +126,7 @@ export const ContactSection = () => {
               rel="noopener noreferrer"
               className="flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-xs py-3 px-4 rounded-2xl shadow-sm transition"
             >
-              <MessageCircle size={17} fill="currentColor" />
+              <MessageCircle size={17} />
               <span>WhatsApp Chat</span>
             </a>
             <a
@@ -157,10 +157,10 @@ export const ContactSection = () => {
               href="https://maps.app.goo.gl/h3PFovfsiCd4zuzf7"
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute top-3 right-3 bg-white/95 hover:bg-white text-[#1F2937] font-bold text-xs px-3.5 py-2 rounded-xl shadow-md border border-[#E6EAF0] transition flex items-center gap-1.5 backdrop-blur-xs"
+              className="absolute top-3 right-3 bg-white/95 hover:bg-white text-[#1F2937] font-extrabold text-[10px] sm:text-xs px-3 py-1.5 rounded-xl shadow-lg border border-[#E6EAF0] transition flex items-center gap-1.5 backdrop-blur-xs z-10 hover:scale-105"
             >
-              <MapPin size={14} className="text-[#2F5D8C]" />
-              <span>Open in Google Maps ↗</span>
+              <MapPin size={13} className="text-[#2F5D8C]" />
+              <span>Open Google Maps ↗</span>
             </a>
           </div>
         </div>

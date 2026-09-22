@@ -258,8 +258,8 @@ export const ProductSections = () => {
               </h3>
               <p className="text-xs sm:text-sm text-gray-200 font-medium">
                 {selectedBrand && selectedBrand !== 'ALL'
-                  ? `Website par sabhi ${selectedBrand} models list karna impossible hai! Humare physical store par latest & older ${selectedBrand} models stock me hain. Direct best rate poochein.`
-                  : `Humare offline store par 1000+ items available hain. Agar aapko koi specific product, model, ya variant chahiye toh turant WhatsApp par enquiry karein.`}
+                  ? `It is impossible to list all ${selectedBrand} models on our website! Our physical store has a wide range of latest and popular ${selectedBrand} models in stock. Enquire directly on WhatsApp for instant prices.`
+                  : `We have over 1000+ items available in our physical store. If you are looking for a specific product, model, or variant, enquire on WhatsApp right away for fast assistance.`}
               </p>
             </div>
             <a
@@ -300,9 +300,9 @@ export const ProductSections = () => {
             <Search size={28} />
           </div>
           <div className="space-y-1">
-            <h4 className="text-lg font-extrabold text-[#1F2937]">Website Par Nahi Mila?</h4>
+            <h4 className="text-lg font-extrabold text-[#1F2937]">Didn't find it on our website?</h4>
             <p className="text-xs sm:text-sm text-[#667085]">
-              Humare physical store par 1000+ items stock me hain! Aap direct WhatsApp par model ya photo bhejkar instant stock & price jaan sakte hain.
+              We have over 1000+ items in stock at our physical store! Send us the product name or photo directly on WhatsApp for instant stock & price confirmation.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">

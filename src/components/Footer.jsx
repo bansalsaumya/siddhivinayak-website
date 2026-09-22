@@ -135,7 +135,18 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="hover:text-emerald-600 transition hover:underline font-semibold"
                 >
-                  WhatsApp Best Price Quotes Available
+                  WhatsApp Best Price Quotes
+                </a>
+              </div>
+              <div className="flex items-center gap-2 pt-1">
+                <span className="text-[#E1306C] flex-shrink-0 font-bold text-sm">📸</span>
+                <a 
+                  href="https://www.instagram.com/dheeraj_swami_haryana?utm_source=qr&stkn=cWtrbmU5dDgweHJw"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-[#E1306C] transition hover:underline font-semibold text-[#1F2937]"
+                >
+                  Follow on Instagram (@dheeraj_swami_haryana)
                 </a>
               </div>
             </div>

@@ -119,15 +119,25 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          <a
-            href={`https://wa.me/919725111128?text=${encodeURIComponent('Hello Shree Lata, I would like to enquire about your product catalogue.')}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-xs py-3 px-4 rounded-2xl shadow-sm transition mt-4"
-          >
-            <MessageCircle size={17} fill="currentColor" />
-            <span>Chat on WhatsApp (+91 97251 11128)</span>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-2 mt-4">
+            <a
+              href={`https://wa.me/919725111128?text=${encodeURIComponent('Hello Shree Lata, I would like to enquire about your product catalogue.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-xs py-3 px-4 rounded-2xl shadow-sm transition"
+            >
+              <MessageCircle size={17} fill="currentColor" />
+              <span>WhatsApp Chat</span>
+            </a>
+            <a
+              href="https://www.instagram.com/dheeraj_swami_haryana?utm_source=qr&stkn=cWtrbmU5dDgweHJw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F56040] hover:opacity-95 text-white font-bold text-xs py-3 px-4 rounded-2xl shadow-sm transition"
+            >
+              <span>📸 Instagram Handle</span>
+            </a>
+          </div>
 
         </div>
 

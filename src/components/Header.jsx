@@ -38,8 +38,6 @@ export const Header = () => {
     setActiveTab(tabName);
     if (categoryName) {
       setSelectedCategory(categoryName);
-      setSelectedBrand('ALL');
-      setSelectedSectionFilter('ALL');
     }
     setIsCategoryDropdownOpen(false);
     setIsMobileMenuOpen(false);

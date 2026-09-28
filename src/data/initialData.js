@@ -2858,7 +2858,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-601',
+    id: 'prod-mob-601-dup1',
     name: 'Google Pixel 10 Pro XL',
     sku: 'SL-MOB-601',
     category: 'Mobiles & Smartphones',
@@ -2874,7 +2874,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-602',
+    id: 'prod-mob-602-dup2',
     name: 'Google Pixel 10 Pro',
     sku: 'SL-MOB-602',
     category: 'Mobiles & Smartphones',
@@ -2890,7 +2890,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-603',
+    id: 'prod-mob-603-dup3',
     name: 'Google Pixel 10',
     sku: 'SL-MOB-603',
     category: 'Mobiles & Smartphones',
@@ -2906,7 +2906,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-604',
+    id: 'prod-mob-604-dup4',
     name: 'Google Pixel 10a',
     sku: 'SL-MOB-604',
     category: 'Mobiles & Smartphones',
@@ -2922,7 +2922,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-605',
+    id: 'prod-mob-605-dup5',
     name: 'Google Pixel 9 Pro XL',
     sku: 'SL-MOB-605',
     category: 'Mobiles & Smartphones',
@@ -2938,7 +2938,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-606',
+    id: 'prod-mob-606-dup6',
     name: 'Google Pixel 9 Pro',
     sku: 'SL-MOB-606',
     category: 'Mobiles & Smartphones',
@@ -2954,7 +2954,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-607',
+    id: 'prod-mob-607-dup7',
     name: 'Google Pixel 9',
     sku: 'SL-MOB-607',
     category: 'Mobiles & Smartphones',
@@ -2970,7 +2970,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-608',
+    id: 'prod-mob-608-dup8',
     name: 'Google Pixel 9a',
     sku: 'SL-MOB-608',
     category: 'Mobiles & Smartphones',
@@ -2986,7 +2986,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-609',
+    id: 'prod-mob-609-dup9',
     name: 'Google Pixel 9 Pro Fold',
     sku: 'SL-MOB-609',
     category: 'Mobiles & Smartphones',
@@ -3002,7 +3002,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-610',
+    id: 'prod-mob-610-dup10',
     name: 'Google Pixel Fold',
     sku: 'SL-MOB-610',
     category: 'Mobiles & Smartphones',
@@ -3018,7 +3018,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-611',
+    id: 'prod-mob-611-dup11',
     name: 'Google Pixel 8 Pro',
     sku: 'SL-MOB-611',
     category: 'Mobiles & Smartphones',
@@ -3034,7 +3034,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-612',
+    id: 'prod-mob-612-dup12',
     name: 'Google Pixel 8',
     sku: 'SL-MOB-612',
     category: 'Mobiles & Smartphones',
@@ -3050,7 +3050,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-613',
+    id: 'prod-mob-613-dup13',
     name: 'Google Pixel 8a',
     sku: 'SL-MOB-613',
     category: 'Mobiles & Smartphones',
@@ -3066,7 +3066,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-614',
+    id: 'prod-mob-614-dup14',
     name: 'Google Pixel 7 Pro',
     sku: 'SL-MOB-614',
     category: 'Mobiles & Smartphones',
@@ -3082,7 +3082,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-615',
+    id: 'prod-mob-615-dup15',
     name: 'Google Pixel 7',
     sku: 'SL-MOB-615',
     category: 'Mobiles & Smartphones',
@@ -3098,7 +3098,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-616',
+    id: 'prod-mob-616-dup16',
     name: 'Google Pixel 7a',
     sku: 'SL-MOB-616',
     category: 'Mobiles & Smartphones',
@@ -3114,7 +3114,7 @@ export const INITIAL_PRODUCTS = [
     best_seller: true
   },
   {
-    id: 'prod-mob-617',
+    id: 'prod-mob-617-dup17',
     name: 'Google Pixel 6 Pro',
     sku: 'SL-MOB-617',
     category: 'Mobiles & Smartphones',

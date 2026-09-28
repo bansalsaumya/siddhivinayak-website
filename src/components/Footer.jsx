@@ -27,8 +27,8 @@ export const Footer = () => {
           
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-white border border-[#E6EAF0] p-1 shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0">
+            <div className="flex items-center gap-3.5">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-[#E6EAF0] p-1 shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0">
                 <img 
                   src="/uploads/shree_lata_logo_icon.png" 
                   alt="Shree Lata Logo" 
@@ -36,10 +36,10 @@ export const Footer = () => {
                 />
               </div>
               <div>
-                <h3 className="text-xl font-extrabold tracking-tight text-[#1F2937]">
+                <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#1F2937]">
                   SHREE LATA
                 </h3>
-                <p className="text-[10px] font-extrabold tracking-wider text-[#2F5D8C] uppercase">
+                <p className="text-[10px] sm:text-xs font-extrabold tracking-wider text-[#2F5D8C] uppercase">
                   GIFTS & COMMUNICATION
                 </p>
               </div>

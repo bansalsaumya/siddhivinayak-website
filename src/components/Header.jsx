@@ -75,9 +75,9 @@ export const Header = () => {
           {/* Logo */}
           <div 
             onClick={() => handleNavClick('home')} 
-            className="flex items-center gap-2 sm:gap-3 cursor-pointer group select-none flex-shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3.5 cursor-pointer group select-none flex-shrink-0"
           >
-            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl bg-white border border-[#E6EAF0] p-1 shadow-md flex items-center justify-center overflow-hidden flex-shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-white border border-[#E6EAF0] p-1 shadow-md flex items-center justify-center overflow-hidden flex-shrink-0 group-hover:scale-105 transition-transform">
               <img 
                 src="/uploads/shree_lata_logo_icon.png" 
                 alt="Shree Lata Logo" 
@@ -85,10 +85,10 @@ export const Header = () => {
               />
             </div>
             <div>
-              <h1 className="text-sm sm:text-xl font-extrabold tracking-tight text-[#1F2937] leading-tight">
+              <h1 className="text-base sm:text-2xl font-extrabold tracking-tight text-[#1F2937] leading-tight">
                 SHREE LATA
               </h1>
-              <p className="text-[8px] sm:text-[10px] font-extrabold tracking-wider text-[#2F5D8C] uppercase leading-none mt-0.5">
+              <p className="text-[9px] sm:text-[11px] font-extrabold tracking-wider text-[#2F5D8C] uppercase leading-none mt-0.5">
                 GIFTS & COMMUNICATION
               </p>
             </div>

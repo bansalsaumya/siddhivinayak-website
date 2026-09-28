@@ -28,8 +28,12 @@ export const Footer = () => {
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#2F5D8C] text-white flex items-center justify-center font-black text-lg shadow-2xs">
-                <span className="text-[#E8B84B]">SL</span>
+              <div className="w-10 h-10 rounded-2xl bg-white border border-[#E6EAF0] p-1 shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0">
+                <img 
+                  src="/uploads/shree_lata_logo_icon.png" 
+                  alt="Shree Lata Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-extrabold tracking-tight text-[#1F2937]">

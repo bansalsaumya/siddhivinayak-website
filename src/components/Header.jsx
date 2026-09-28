@@ -77,8 +77,12 @@ export const Header = () => {
             onClick={() => handleNavClick('home')} 
             className="flex items-center gap-2 sm:gap-3 cursor-pointer group select-none flex-shrink-0"
           >
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#2F5D8C] text-white flex items-center justify-center font-black text-sm sm:text-lg tracking-tighter shadow-md">
-              <span className="text-[#E8B84B]">SL</span>
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl bg-white border border-[#E6EAF0] p-1 shadow-md flex items-center justify-center overflow-hidden flex-shrink-0 group-hover:scale-105 transition-transform">
+              <img 
+                src="/uploads/shree_lata_logo_icon.png" 
+                alt="Shree Lata Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <h1 className="text-sm sm:text-xl font-extrabold tracking-tight text-[#1F2937] leading-tight">

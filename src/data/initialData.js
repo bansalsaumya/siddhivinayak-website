@@ -7536,6 +7536,18 @@ export const INITIAL_HERO_SLIDES = [
     category: "Mobile Repairing & Services",
     display_order: 3,
     active: 1
+  },
+  {
+    id: 4,
+    badge: "PREMIUM GIFTS & PRESENTATION",
+    title: "Gifts & Special Presents.",
+    blue_highlight: "For Every Occasion.",
+    description: "Explore curated gift hampers, customized presents, luxury gift packing, toys & festive items.",
+    image_url: "/uploads/hero_gifts.jpg",
+    cta_text: "Explore Gifts",
+    category: "Handbags, Purses & Accessories",
+    display_order: 4,
+    active: 1
   }
 ];
 

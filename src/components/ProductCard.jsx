@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 import { useCatalog } from '../context/CatalogContext';
 import { Heart, MessageCircle, Eye } from 'lucide-react';
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product, priority = false }) => {
   const { setSelectedProductForModal, getWhatsAppLink } = useCatalog();
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const images = typeof product.images === 'string' ? JSON.parse(product.images) : product.images;
-  const primaryImage = images && images.length > 0 
+  let rawPrimary = images && images.length > 0 
     ? images[0] 
-    : 'https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=800&q=80';
+    : 'https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=400&q=75';
+
+  // Optimize Unsplash image URLs for mobile speed (400px width instead of 800px)
+  const primaryImage = rawPrimary.includes('unsplash.com')
+    ? rawPrimary.replace(/w=\d+/, 'w=400').replace(/q=\d+/, 'q=75')
+    : rawPrimary;
 
   const defaultVariant = product.variants && product.variants.length > 0 ? product.variants[0] : null;
   const whatsappUrl = getWhatsAppLink(product, defaultVariant);
@@ -22,15 +28,25 @@ export const ProductCard = ({ product }) => {
         onClick={() => setSelectedProductForModal(product)} 
         className="relative h-36 sm:h-52 overflow-hidden bg-[#F8FAFC] cursor-pointer p-2.5 sm:p-4 flex items-center justify-center"
       >
+        {/* Shimmer Placeholder while image loads */}
+        {!isImageLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 animate-pulse" />
+        )}
+
         <img 
           src={primaryImage} 
           alt={product.name} 
+          onLoad={() => setIsImageLoaded(true)}
           onError={(e) => {
+            setIsImageLoaded(true);
             e.target.onerror = null;
-            e.target.src = 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80';
+            e.target.src = 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=75';
           }}
-          className="w-full h-full object-contain img-zoom"
-          loading="lazy"
+          className={`w-full h-full object-contain img-zoom transition-opacity duration-300 ${
+            isImageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : 'auto'}
           decoding="async"
         />
 

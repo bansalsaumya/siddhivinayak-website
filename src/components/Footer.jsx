@@ -1,6 +1,4 @@
-import React from 'react';
-import { useCatalog } from '../context/CatalogContext';
-import { MessageCircle, Phone, MapPin, Sparkles, ChevronRight } from 'lucide-react';
+import { MessageCircle, Phone, MapPin, Sparkles, ChevronRight, Mail } from 'lucide-react';
 
 export const Footer = () => {
   const { categories, setSelectedCategory, setActiveTab, whatsappConfig } = useCatalog();
@@ -129,6 +127,15 @@ export const Footer = () => {
                   className="font-mono hover:text-[#2F5D8C] transition hover:underline font-bold"
                 >
                   +{whatsappConfig.phone || '919725111128'}
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail size={15} className="text-[#2F5D8C] flex-shrink-0" />
+                <a 
+                  href="mailto:shreelatastore@gmail.com" 
+                  className="font-mono hover:text-[#2F5D8C] transition hover:underline font-bold text-xs"
+                >
+                  shreelatastore@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">

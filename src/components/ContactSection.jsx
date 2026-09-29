@@ -6,7 +6,8 @@ import {
   Clock, 
   MessageCircle, 
   Store,
-  CheckCircle2
+  CheckCircle2,
+  Mail
 } from 'lucide-react';
 
 export const ContactSection = () => {
@@ -113,6 +114,22 @@ export const ContactSection = () => {
                 <div>
                   <p className="font-bold text-[#1F2937] group-hover:text-emerald-700 transition-colors">WhatsApp Support</p>
                   <p className="text-xs text-[#667085] mt-0.5 group-hover:text-emerald-800">Instant price quote & stock check (Click to Chat)</p>
+                </div>
+              </a>
+
+              {/* Official Email - Clickable Mailto */}
+              <a 
+                href="mailto:shreelatastore@gmail.com"
+                className="flex items-start gap-3.5 p-2.5 rounded-2xl hover:bg-[#F3F6FA] transition cursor-pointer group border border-transparent hover:border-[#E6EAF0]"
+              >
+                <div className="p-2 rounded-xl bg-[#DCEAF7] text-[#2F5D8C] mt-0.5 flex-shrink-0 group-hover:scale-105 transition-transform">
+                  <Mail size={17} />
+                </div>
+                <div>
+                  <p className="font-bold text-[#1F2937] group-hover:text-[#2F5D8C] transition-colors">Official Store Email</p>
+                  <p className="text-xs font-extrabold text-[#2F5D8C] mt-0.5 font-mono group-hover:underline">
+                    shreelatastore@gmail.com
+                  </p>
                 </div>
               </a>
 

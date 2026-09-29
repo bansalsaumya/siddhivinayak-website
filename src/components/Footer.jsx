@@ -1,3 +1,5 @@
+import React from 'react';
+import { useCatalog } from '../context/CatalogContext';
 import { MessageCircle, Phone, MapPin, Sparkles, ChevronRight, Mail } from 'lucide-react';
 
 export const Footer = () => {

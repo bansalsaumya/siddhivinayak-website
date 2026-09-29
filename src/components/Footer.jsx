@@ -27,33 +27,39 @@ export const Footer = () => {
           
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3.5">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-[#E6EAF0] p-1 shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0">
+            <button 
+              onClick={() => handleNavClick('home')}
+              className="flex items-center gap-3.5 text-left group cursor-pointer focus:outline-none"
+            >
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-[#E6EAF0] p-1 shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 group-hover:shadow-md group-hover:border-[#2F5D8C] transition-all">
                 <img 
                   src="/uploads/shree_lata_logo_icon.png" 
                   alt="Shree Lata Logo" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform"
                 />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#1F2937]">
+                <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#1F2937] group-hover:text-[#2F5D8C] transition-colors">
                   SHREE LATA
                 </h3>
                 <p className="text-[10px] sm:text-xs font-extrabold tracking-wider text-[#2F5D8C] uppercase">
                   GIFTS & COMMUNICATION
                 </p>
               </div>
-            </div>
+            </button>
 
             <p className="text-xs text-[#667085] leading-relaxed">
               Shree Lata Gifts & Communication is your premier multi-category retail store catalogue featuring smartphones, accessories, artificial jewellery, cosmetics, stationery, toys, sports, and home decor items.
             </p>
 
             <div className="pt-1">
-              <span className="inline-flex items-center gap-1.5 bg-white text-[#2F5D8C] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-[#E6EAF0] shadow-2xs">
-                <Sparkles size={12} className="text-[#E8B84B]" />
+              <button 
+                onClick={() => handleNavClick('products')}
+                className="inline-flex items-center gap-1.5 bg-white text-[#2F5D8C] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider border border-[#E6EAF0] shadow-2xs hover:bg-[#2F5D8C] hover:text-white transition-all cursor-pointer group"
+              >
+                <Sparkles size={12} className="text-[#E8B84B] group-hover:text-yellow-300" />
                 One Store, Many Categories
-              </span>
+              </button>
             </div>
           </div>
 
@@ -62,24 +68,36 @@ export const Footer = () => {
             <h4 className="text-xs font-extrabold uppercase tracking-widest text-[#2F5D8C]">
               Quick Navigation
             </h4>
-            <ul className="space-y-2 text-xs text-[#667085] font-semibold">
+            <ul className="space-y-2.5 text-xs text-[#667085] font-semibold">
               <li>
-                <button onClick={() => handleNavClick('home')} className="hover:text-[#2F5D8C] transition flex items-center gap-1">
+                <button 
+                  onClick={() => handleNavClick('home')} 
+                  className="hover:text-[#2F5D8C] hover:translate-x-1 transition-all flex items-center gap-1 cursor-pointer"
+                >
                   <ChevronRight size={12} className="text-[#2F5D8C]" /> HOME
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavClick('products')} className="hover:text-[#2F5D8C] transition flex items-center gap-1">
+                <button 
+                  onClick={() => handleNavClick('products')} 
+                  className="hover:text-[#2F5D8C] hover:translate-x-1 transition-all flex items-center gap-1 cursor-pointer"
+                >
                   <ChevronRight size={12} className="text-[#2F5D8C]" /> ALL PRODUCTS
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavClick('about')} className="hover:text-[#2F5D8C] transition flex items-center gap-1">
+                <button 
+                  onClick={() => handleNavClick('about')} 
+                  className="hover:text-[#2F5D8C] hover:translate-x-1 transition-all flex items-center gap-1 cursor-pointer"
+                >
                   <ChevronRight size={12} className="text-[#2F5D8C]" /> ABOUT US
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavClick('contact')} className="hover:text-[#2F5D8C] transition flex items-center gap-1">
+                <button 
+                  onClick={() => handleNavClick('contact')} 
+                  className="hover:text-[#2F5D8C] hover:translate-x-1 transition-all flex items-center gap-1 cursor-pointer"
+                >
                   <ChevronRight size={12} className="text-[#2F5D8C]" /> CONTACT & STORE
                 </button>
               </li>
@@ -91,14 +109,19 @@ export const Footer = () => {
             <h4 className="text-xs font-extrabold uppercase tracking-widest text-[#2F5D8C]">
               Store Departments
             </h4>
-            <ul className="grid grid-cols-1 gap-1.5 text-xs text-[#667085] font-semibold">
-              {categories.slice(0, 6).map((cat) => (
-                <li key={cat.id}>
+            <ul className="grid grid-cols-1 gap-2 text-xs text-[#667085] font-semibold">
+              {categories.map((cat) => (
+                <li key={cat.id || cat.name}>
                   <button 
-                    onClick={() => handleCategoryClick(cat.name)}
-                    className="hover:text-[#2F5D8C] transition flex items-center gap-1 truncate text-left"
+                    onClick={() => {
+                      setSelectedCategory(cat.name);
+                      setActiveTab('products');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-[#2F5D8C] hover:translate-x-1 transition-all flex items-center gap-1 truncate text-left cursor-pointer w-full"
                   >
-                    <ChevronRight size={12} className="text-[#2F5D8C]" /> {cat.name}
+                    <ChevronRight size={12} className="text-[#2F5D8C] flex-shrink-0" /> 
+                    <span className="truncate">{cat.name}</span>
                   </button>
                 </li>
               ))}
@@ -110,58 +133,62 @@ export const Footer = () => {
             <h4 className="text-xs font-extrabold uppercase tracking-widest text-[#2F5D8C]">
               Store Enquiries
             </h4>
-            <div className="space-y-2.5 text-xs text-[#667085]">
-              <div className="flex items-start gap-2">
-                <MapPin size={15} className="text-[#2F5D8C] flex-shrink-0 mt-0.5" />
-                <a 
-                  href="https://maps.app.goo.gl/h3PFovfsiCd4zuzf7" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-[#2F5D8C] transition underline-offset-2 hover:underline"
-                >
+            <div className="space-y-3 text-xs text-[#667085]">
+              <a 
+                href="https://maps.google.com/?q=15+Gayatri+Shopping+Centre+Dibiyapur+Vatva+Ahmedabad+Gujarat+382445" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 group hover:text-[#2F5D8C] transition-colors cursor-pointer"
+              >
+                <MapPin size={16} className="text-[#2F5D8C] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <span className="group-hover:underline underline-offset-2">
                   15, Gayatri Shopping Centre, Dibiyapur, Vatva, Ahmedabad, Gujarat 382445
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone size={15} className="text-[#2F5D8C] flex-shrink-0" />
-                <a 
-                  href={`tel:+${whatsappConfig.phone || '919725111128'}`} 
-                  className="font-mono hover:text-[#2F5D8C] transition hover:underline font-bold"
-                >
+                </span>
+              </a>
+
+              <a 
+                href={`tel:+${whatsappConfig.phone || '919725111128'}`} 
+                className="flex items-center gap-2 group hover:text-[#2F5D8C] transition-colors cursor-pointer"
+              >
+                <Phone size={15} className="text-[#2F5D8C] flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="font-mono font-bold group-hover:underline">
                   +{whatsappConfig.phone || '919725111128'}
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail size={15} className="text-[#2F5D8C] flex-shrink-0" />
-                <a 
-                  href="mailto:shreelatastore@gmail.com" 
-                  className="font-mono hover:text-[#2F5D8C] transition hover:underline font-bold text-xs"
-                >
+                </span>
+              </a>
+
+              <a 
+                href="mailto:shreelatastore@gmail.com" 
+                className="flex items-center gap-2 group hover:text-[#2F5D8C] transition-colors cursor-pointer"
+              >
+                <Mail size={15} className="text-[#2F5D8C] flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="font-mono font-bold text-xs group-hover:underline">
                   shreelatastore@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <MessageCircle size={15} className="text-emerald-600 flex-shrink-0" />
-                <a 
-                  href={`https://wa.me/${whatsappConfig.phone || '919725111128'}?text=${encodeURIComponent('Hello Shree Lata, I would like to enquire about your products.')}`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-emerald-600 transition hover:underline font-semibold"
-                >
+                </span>
+              </a>
+
+              <a 
+                href={`https://wa.me/${whatsappConfig.phone || '919725111128'}?text=${encodeURIComponent('Hello Shree Lata, I would like to enquire about your products.')}`}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 group text-emerald-700 hover:text-emerald-600 transition-colors cursor-pointer"
+              >
+                <MessageCircle size={16} className="text-emerald-600 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="font-bold group-hover:underline">
                   WhatsApp Best Price Quotes
-                </a>
-              </div>
-              <div className="flex items-center gap-2 pt-1">
-                <span className="text-[#E1306C] flex-shrink-0 font-bold text-sm">📸</span>
-                <a 
-                  href="https://www.instagram.com/dheeraj_swami_haryana?utm_source=qr&stkn=cWtrbmU5dDgweHJw"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-[#E1306C] transition hover:underline font-semibold text-[#1F2937]"
-                >
+                </span>
+              </a>
+
+              <a 
+                href="https://www.instagram.com/dheeraj_swami_haryana?utm_source=qr&stkn=cWtrbmU5dDgweHJw"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 group text-[#E1306C] hover:text-[#C13584] transition-colors cursor-pointer pt-0.5"
+              >
+                <span className="flex-shrink-0 font-bold text-sm group-hover:scale-110 transition-transform">📸</span>
+                <span className="font-bold group-hover:underline">
                   Follow on Instagram (@dheeraj_swami_haryana)
-                </a>
-              </div>
+                </span>
+              </a>
             </div>
           </div>
 
@@ -170,7 +197,12 @@ export const Footer = () => {
         {/* Bottom Copyright */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#667085] gap-4">
           <p>© {new Date().getFullYear()} Shree Lata Product Catalogue. All Rights Reserved.</p>
-          <p className="text-[11px] font-semibold text-[#2F5D8C]">Multi-Category Retail Catalogue • Direct WhatsApp Enquiries</p>
+          <button 
+            onClick={() => handleNavClick('products')}
+            className="text-[11px] font-semibold text-[#2F5D8C] hover:underline cursor-pointer"
+          >
+            Multi-Category Retail Catalogue • Direct WhatsApp Enquiries
+          </button>
         </div>
 
       </div>

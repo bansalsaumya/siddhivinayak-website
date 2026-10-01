@@ -37,8 +37,8 @@ export const AdminPanel = () => {
 
   const [activeTab, setActiveTab] = useState('products'); // 'products', 'categories', 'slides'
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [loginEmail, setLoginEmail] = useState('admin@shreelata.com');
-  const [loginPassword, setLoginPassword] = useState('admin123');
+  const [loginEmail, setLoginEmail] = useState('adminshreelatastore@gmail.com');
+  const [loginPassword, setLoginPassword] = useState('shreelatavatva');
   const [loginError, setLoginError] = useState('');
   const [stats, setStats] = useState(null);
   const [uploading, setUploading] = useState(false);
@@ -103,23 +103,28 @@ export const AdminPanel = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoginError('');
+
+    const cleanEmail = loginEmail.trim().toLowerCase();
+    const cleanPass = loginPassword.trim();
+
+    // Instant authentication for static deployment on Vercel
+    if (
+      (cleanEmail === 'adminshreelatastore@gmail.com' || cleanEmail === 'admin@shreelata.com' || cleanEmail === 'admin') && 
+      (cleanPass === 'shreelatavatva' || cleanPass === 'admin123')
+    ) {
+      localStorage.setItem('shreelata_token', 'shreelata_admin_session_active');
+      setIsAuthenticated(true);
+      setLoginError('');
+      return;
+    }
+
     try {
       const res = await api.login(loginEmail, loginPassword);
       localStorage.setItem('shreelata_token', res.token);
       setIsAuthenticated(true);
       fetchStats();
     } catch (err) {
-      // Production fallback for Vercel static deployment
-      if (
-        (loginEmail.trim().toLowerCase() === 'admin@shreelata.com' || loginEmail.trim().toLowerCase() === 'admin') && 
-        loginPassword === 'admin123'
-      ) {
-        localStorage.setItem('shreelata_token', 'shreelata_admin_session_active');
-        setIsAuthenticated(true);
-        setLoginError('');
-      } else {
-        setLoginError('Invalid credentials. Please use admin@shreelata.com / admin123');
-      }
+      setLoginError('Invalid credentials. Please use adminshreelatastore@gmail.com / shreelatavatva');
     }
   };
 

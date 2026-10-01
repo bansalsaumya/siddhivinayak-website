@@ -38,7 +38,7 @@ export const AdminPanel = () => {
   const [activeTab, setActiveTab] = useState('products'); // 'products', 'categories', 'slides'
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loginEmail, setLoginEmail] = useState('adminshreelatastore@gmail.com');
-  const [loginPassword, setLoginPassword] = useState('shreelatavatva');
+  const [loginPassword, setLoginPassword] = useState('');
   const [loginError, setLoginError] = useState('');
   const [stats, setStats] = useState(null);
   const [uploading, setUploading] = useState(false);
@@ -82,10 +82,10 @@ export const AdminPanel = () => {
   });
 
   useEffect(() => {
-    const token = localStorage.getItem('shreelata_token');
-    if (token) {
-      setIsAuthenticated(true);
-      fetchStats();
+    // Require password authentication every time Admin Panel opens
+    if (!isAdminOpen) {
+      setIsAuthenticated(false);
+      setLoginPassword('');
     }
   }, [isAdminOpen]);
 

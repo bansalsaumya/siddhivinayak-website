@@ -57,15 +57,6 @@ export const Header = () => {
             <span className="hidden sm:inline text-xs font-medium truncate">ONE STORE, MANY CATEGORIES • Contact us directly for bulk & best price enquiries</span>
             <span className="sm:hidden text-[10px] font-medium truncate">ONE STORE, MANY CATEGORIES</span>
           </div>
-          
-          <button 
-            onClick={() => setIsAdminOpen(true)}
-            className="flex-shrink-0 flex items-center gap-1 bg-white/10 hover:bg-white/20 text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full transition"
-            title="Open Admin Dashboard"
-          >
-            <Settings size={11} />
-            <span>Admin</span>
-          </button>
         </div>
       </div>
 
@@ -75,7 +66,9 @@ export const Header = () => {
           {/* Logo */}
           <div 
             onClick={() => handleNavClick('home')} 
+            onDoubleClick={() => setIsAdminOpen(true)}
             className="flex items-center gap-2.5 sm:gap-3.5 cursor-pointer group select-none flex-shrink-0"
+            title="Shree Lata Gifts & Communication (Double click for Admin)"
           >
             <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-white border border-[#E6EAF0] p-1 shadow-md flex items-center justify-center overflow-hidden flex-shrink-0 group-hover:scale-105 transition-transform">
               <img 

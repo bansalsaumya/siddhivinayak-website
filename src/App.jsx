@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CatalogProvider, useCatalog } from './context/CatalogContext';
 import { Header } from './components/Header';
 import { HeroSlider } from './components/HeroSlider';
@@ -13,7 +13,34 @@ import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { Footer } from './components/Footer';
 
 const MainContent = () => {
-  const { activeTab } = useCatalog();
+  const { activeTab, setIsAdminOpen } = useCatalog();
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Secret key combination: Ctrl + Shift + A or Alt + A
+      if ((e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'a') || (e.altKey && e.key.toLowerCase() === 'a')) {
+        e.preventDefault();
+        setIsAdminOpen(true);
+      }
+    };
+
+    const handleHashChange = () => {
+      if (window.location.hash.toLowerCase() === '#admin') {
+        setIsAdminOpen(true);
+      }
+    };
+
+    if (window.location.hash.toLowerCase() === '#admin') {
+      setIsAdminOpen(true);
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [setIsAdminOpen]);
 
   return (
     <main className="min-h-[75vh]">

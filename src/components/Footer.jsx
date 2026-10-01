@@ -194,13 +194,17 @@ export const Footer = () => {
 
         </div>
 
-        {/* Bottom Copyright & Designer Credit */}
+        {/* Bottom Copyright & Secret Admin Trigger */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#667085] gap-4">
           <p>© {new Date().getFullYear()} Shree Lata Product Catalogue. All Rights Reserved.</p>
-          <div className="flex items-center gap-1.5 text-xs font-bold text-[#2F5D8C] bg-white px-3.5 py-1.5 rounded-full border border-[#E6EAF0] shadow-2xs">
+          <button 
+            onClick={() => setIsAdminOpen(true)}
+            className="flex items-center gap-1.5 text-xs font-bold text-[#2F5D8C] bg-white px-3.5 py-1.5 rounded-full border border-[#E6EAF0] shadow-2xs hover:border-[#2F5D8C] transition-all cursor-pointer"
+            title="Design Credit"
+          >
             <span>✨ Premium Design by</span>
             <span className="text-[#1F2937] font-black tracking-wide">Saumya Bansal</span>
-          </div>
+          </button>
         </div>
 
       </div>
